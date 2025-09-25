@@ -1,3 +1,6 @@
+import {CipherMethod} from "./handlers/constants";
+
 export class CreateEncryptionDto {
-    value: string;
-}
+        cipherMethod: CipherMethod
+        value: string;
+    }

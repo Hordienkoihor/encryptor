@@ -7,6 +7,8 @@ import * as process from "node:process";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import { UsersModule } from './users/users.module';
 import {User} from "./users/user.model";
+import {EncryptionService} from "./encryption/encryption.service";
+import {EncryptionController} from "./encryption/encryption.controller";
 
 @Module({
     imports: [
@@ -28,8 +30,8 @@ import {User} from "./users/user.model";
 
 
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [AppController, EncryptionController],
+    providers: [AppService, EncryptionService],
 })
 export class AppModule {
 }

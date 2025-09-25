@@ -6,8 +6,13 @@ import {CreateEncryptionDto} from "./encryptor-encrypt.dto";
 export class EncryptionController {
     constructor(private readonly encryptionService: EncryptionService) {}
 
-    @Post('/ceasar')
+    @Post('/caesar')
     async encryptWithCaesar(@Body() dto: CreateEncryptionDto) {
         return this.encryptionService.encryptWithCaesar(dto);
+    }
+
+    @Post('/atbash')
+    async encryptWithAtbash(@Body() dto: CreateEncryptionDto) {
+        return this.encryptionService.encryptWithAtbash(dto);
     }
 }
