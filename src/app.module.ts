@@ -5,7 +5,7 @@ import {ConfigModule} from "@nestjs/config";
 import {EncryptionModule} from './encryption/encryption.module';
 import * as process from "node:process";
 import {TypeOrmModule} from "@nestjs/typeorm";
-import { UsersModule } from './users/users.module';
+import {UsersModule} from './users/users.module';
 import {User} from "./users/user.model";
 import {EncryptionService} from "./encryption/encryption.service";
 import {EncryptionController} from "./encryption/encryption.controller";
@@ -27,8 +27,6 @@ import {EncryptionController} from "./encryption/encryption.controller";
             synchronize: true,
         }),
         UsersModule
-
-
     ],
     controllers: [AppController, EncryptionController],
     providers: [AppService, EncryptionService],

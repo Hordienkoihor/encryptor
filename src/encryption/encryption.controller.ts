@@ -1,6 +1,8 @@
 import {Body, Controller, Post} from '@nestjs/common';
 import {EncryptionService} from "./encryption.service";
 import {CreateEncryptionDto} from "./encryptor-encrypt.dto";
+import {CreateUserDto} from "../users/create-user.dto";
+import {UserDataDto} from "../users/user-data.dto";
 
 @Controller('encryption')
 export class EncryptionController {
@@ -8,7 +10,8 @@ export class EncryptionController {
 
     @Post('/caesar')
     async encryptWithCaesar(@Body() dto: CreateEncryptionDto) {
-        return this.encryptionService.encryptWithCaesar(dto);
+        const userInfo: UserDataDto = dto.email ? { email: dto.email } : {email: undefined};
+        return this.encryptionService.encryptWithCaesar(dto, userInfo);
     }
 
     @Post('/atbash')

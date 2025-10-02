@@ -2,7 +2,6 @@ import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity('users')
 export class User {
-
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -12,5 +11,6 @@ export class User {
     @Column()
     password: string;
 
-
+    @Column({type: "simple-json", nullable: true})
+    recentCyphers: string[] = [];
 }
