@@ -1,13 +1,13 @@
 import {Handler} from "./handler-interface";
 import {ALPHABET, ALPHABET_UP, CipherMethod, KEY} from "./constants";
 
-export const caesarHandlerUtility: Handler = (cipherMethodId: CipherMethod, value: string) => {
+export const caesarHandlerUtility: Handler = (cipherMethodId: string, value: string) => {
     let handlerResponse: HandlerResponse = {
         success: false,
         value: null,
     };
 
-    if (cipherMethodId != CipherMethod.CEASAR) {
+    if (CipherMethod.CAESAR != cipherMethodId) {
         return handlerResponse;
     }
 

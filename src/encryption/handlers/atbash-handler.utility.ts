@@ -4,7 +4,7 @@ import {ALPHABET, ALPHABET_UP, CipherMethod, KEY} from "./constants";
 import {HttpException, HttpStatus} from "@nestjs/common";
 
 
-export const atbashHandlerUtility: Handler = (cipherMethodId: CipherMethod, value: string): HandlerResponse => {
+export const atbashHandlerUtility: Handler = (cipherMethodId: string, value: string): HandlerResponse => {
     let handlerResponse: HandlerResponse = {
         success: false,
         value: null,
